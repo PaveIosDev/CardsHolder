@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CardMenegmentViewController.swift
 //  CardsHolder
 //
 //  Created by Павел Яковенко on 13.04.2023.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CardMenegmentViewController: UIViewController {
 
-    private let cardManagementLabel: UILabel = {
+    private let mainLabel: UILabel = {
         let label = UILabel()
         label.text = "Управление картами"
         label.textColor = #colorLiteral(red: 0.1751098931, green: 0.6135229468, blue: 0.9383910298, alpha: 1)
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     private let tableView: UITableView = {
         let view = UITableView()
+        view.separatorStyle = .none
         view.register(CardTableViewCell.self, forCellReuseIdentifier: "idTableViewCell")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
 
 
     private func setupViews() {
-        view.addSubview(cardManagementLabel)
+        view.addSubview(mainLabel)
         view.addSubview(tableView)
     }
     
@@ -50,15 +51,15 @@ class ViewController: UIViewController {
 
 // MARK: - setConstraints
 
-extension ViewController {
+extension CardMenegmentViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
             
-            cardManagementLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
-            cardManagementLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            mainLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         
-            tableView.topAnchor.constraint(equalTo: cardManagementLabel.bottomAnchor, constant: 5),
+            tableView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 5),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 1),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 1),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 1),
@@ -69,7 +70,7 @@ extension ViewController {
 
 // MARK: - UITableViewDataSource
 
-extension ViewController: UITableViewDataSource {
+extension CardMenegmentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         4
     }
@@ -82,7 +83,7 @@ extension ViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension ViewController: UITableViewDelegate {
+extension CardMenegmentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         270
     }

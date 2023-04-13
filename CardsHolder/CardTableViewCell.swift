@@ -18,13 +18,19 @@ class CardTableViewCell: UITableViewCell {
         return view
     }()
     
-    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Bonus Money"
         label.font = UIFont.systemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private let lineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.937254902, alpha: 1)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -42,6 +48,7 @@ class CardTableViewCell: UITableViewCell {
         backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.937254902, alpha: 1)
         addSubview(cardCellView)
         cardCellView.addSubview(nameLabel)
+        cardCellView.addSubview(lineView)
     }
 }
 
@@ -50,13 +57,18 @@ extension CardTableViewCell {
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: cardCellView.topAnchor, constant: 25),
-            nameLabel.leadingAnchor.constraint(equalTo: cardCellView.leadingAnchor, constant: 25),
+            nameLabel.topAnchor.constraint(equalTo: cardCellView.topAnchor, constant: 20),
+            nameLabel.leadingAnchor.constraint(equalTo: cardCellView.leadingAnchor, constant: 20),
             
-            cardCellView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            cardCellView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             cardCellView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             cardCellView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            cardCellView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            cardCellView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            
+            lineView.heightAnchor.constraint(equalToConstant: 1),
+            lineView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+            lineView.leadingAnchor.constraint(equalTo: cardCellView.leadingAnchor, constant: 20),
+            lineView.trailingAnchor.constraint(equalTo: cardCellView.trailingAnchor, constant: -20)
         ])
     }
 }
