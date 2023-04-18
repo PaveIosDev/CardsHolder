@@ -115,7 +115,10 @@ class CardTableViewCell: UITableViewCell {
     private let moreButton: UIButton = {
         let button = UIButton()
         button.setTitle("Подробнее", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.setTitleColor(#colorLiteral(red: 0.1751098931, green: 0.6135229468, blue: 0.9383910298, alpha: 1), for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.937254902, alpha: 1)
+        button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
         return button
@@ -177,12 +180,14 @@ extension CardTableViewCell {
             logoCardImageView.topAnchor.constraint(equalTo: cardCellView.topAnchor, constant: 20),
             logoCardImageView.trailingAnchor.constraint(equalTo: cardCellView.trailingAnchor, constant: -20),
             logoCardImageView.bottomAnchor.constraint(equalTo: lineViewTop.topAnchor, constant: -10),
+            logoCardImageView.heightAnchor.constraint(equalToConstant: 30),
+            logoCardImageView.widthAnchor.constraint(equalToConstant: 30),
             
             valueBallLabel.topAnchor.constraint(equalTo: lineViewTop.bottomAnchor, constant: 20),
             valueBallLabel.leadingAnchor.constraint(equalTo: cardCellView.leadingAnchor, constant: 20),
             
             ballLabel.leadingAnchor.constraint(equalTo: valueBallLabel.trailingAnchor, constant: 10),
-            ballLabel.topAnchor.constraint(equalTo: lineViewTop.bottomAnchor, constant: 23),
+            ballLabel.topAnchor.constraint(equalTo: lineViewTop.bottomAnchor, constant: 30),
             
             cashBackLabel.topAnchor.constraint(equalTo: valueBallLabel.bottomAnchor, constant: 20),
             cashBackLabel.leadingAnchor.constraint(equalTo: cardCellView.leadingAnchor, constant: 20),
@@ -208,7 +213,9 @@ extension CardTableViewCell {
             deleteImageView.leadingAnchor.constraint(equalTo: reviewImageView.trailingAnchor, constant: 40),
             
             moreButton.topAnchor.constraint(equalTo: lineViewBottom.bottomAnchor, constant: 10),
-            moreButton.trailingAnchor.constraint(equalTo: cardCellView.trailingAnchor, constant: -20)
+            moreButton.trailingAnchor.constraint(equalTo: cardCellView.trailingAnchor, constant: -20),
+            moreButton.bottomAnchor.constraint(equalTo: cardCellView.bottomAnchor, constant: -20),
+            moreButton.widthAnchor.constraint(equalToConstant: 140)
         ])
     }
 }
