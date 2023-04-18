@@ -85,6 +85,6 @@ extension CardMenegmentViewController: UITableViewDataSource {
 
 extension CardMenegmentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        270
+        274
     }
 }
