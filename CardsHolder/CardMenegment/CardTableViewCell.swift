@@ -155,7 +155,7 @@ class CardTableViewCell: UITableViewCell {
     }
     
     @objc private func moreButtonTapped() {
-        
+        print(moreButtonTapped)
     }
 }
 

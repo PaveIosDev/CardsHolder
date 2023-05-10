@@ -13,6 +13,9 @@
 		C401A22929E85C9400770CBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C401A22829E85C9400770CBB /* Assets.xcassets */; };
 		C401A22C29E85C9400770CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C401A22A29E85C9400770CBB /* LaunchScreen.storyboard */; };
 		C401A23429E8687C00770CBB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C401A23329E8687C00770CBB /* CardTableViewCell.swift */; };
+		C401A23A29F190BA00770CBB /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C401A23929F190BA00770CBB /* CardModel.swift */; };
+		C4F935C82A0BF6B9003B71FE /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F935C72A0BF6B9003B71FE /* NetworkRequest.swift */; };
+		C4F935CA2A0BFCD4003B71FE /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F935C92A0BFCD4003B71FE /* NetworkDataFetch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C401A22B29E85C9400770CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C401A22D29E85C9400770CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C401A23329E8687C00770CBB /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		C401A23929F190BA00770CBB /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		C4F935C72A0BF6B9003B71FE /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		C4F935C92A0BFCD4003B71FE /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		C401A21E29E85C9200770CBB /* CardsHolder */ = {
 			isa = PBXGroup;
 			children = (
-				C401A21F29E85C9200770CBB /* AppDelegate.swift */,
-				C401A22129E85C9200770CBB /* SceneDelegate.swift */,
-				C401A22329E85C9200770CBB /* CardMenegmentViewController.swift */,
-				C401A23329E8687C00770CBB /* CardTableViewCell.swift */,
+				C401A23829F190A400770CBB /* Models */,
+				C401A23629F1906A00770CBB /* Aplication */,
+				C401A23529F1904200770CBB /* CardMenegment */,
+				C401A23729F1908A00770CBB /* Network */,
 				C401A22829E85C9400770CBB /* Assets.xcassets */,
 				C401A22A29E85C9400770CBB /* LaunchScreen.storyboard */,
 				C401A22D29E85C9400770CBB /* Info.plist */,
 			);
 			path = CardsHolder;
+			sourceTree = "<group>";
+		};
+		C401A23529F1904200770CBB /* CardMenegment */ = {
+			isa = PBXGroup;
+			children = (
+				C401A22329E85C9200770CBB /* CardMenegmentViewController.swift */,
+				C401A23329E8687C00770CBB /* CardTableViewCell.swift */,
+			);
+			path = CardMenegment;
+			sourceTree = "<group>";
+		};
+		C401A23629F1906A00770CBB /* Aplication */ = {
+			isa = PBXGroup;
+			children = (
+				C401A21F29E85C9200770CBB /* AppDelegate.swift */,
+				C401A22129E85C9200770CBB /* SceneDelegate.swift */,
+			);
+			path = Aplication;
+			sourceTree = "<group>";
+		};
+		C401A23729F1908A00770CBB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C4F935C72A0BF6B9003B71FE /* NetworkRequest.swift */,
+				C4F935C92A0BFCD4003B71FE /* NetworkDataFetch.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C401A23829F190A400770CBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C401A23929F190BA00770CBB /* CardModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +180,11 @@
 			files = (
 				C401A22429E85C9200770CBB /* CardMenegmentViewController.swift in Sources */,
 				C401A22029E85C9200770CBB /* AppDelegate.swift in Sources */,
+				C4F935CA2A0BFCD4003B71FE /* NetworkDataFetch.swift in Sources */,
 				C401A22229E85C9200770CBB /* SceneDelegate.swift in Sources */,
 				C401A23429E8687C00770CBB /* CardTableViewCell.swift in Sources */,
+				C4F935C82A0BF6B9003B71FE /* NetworkRequest.swift in Sources */,
+				C401A23A29F190BA00770CBB /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
