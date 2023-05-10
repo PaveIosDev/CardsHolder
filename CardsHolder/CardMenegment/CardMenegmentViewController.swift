@@ -34,6 +34,7 @@ class CardMenegmentViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        getCards(cardId: <#T##String#>)
     }
 
 
@@ -46,6 +47,21 @@ class CardMenegmentViewController: UIViewController {
     private func setDelegates() {
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    private func getCards(cardId: String) {
+        
+        let urlString = "http://dev.bonusmoney.pro/mobileapp/getAllCompanies"
+
+        NetworkDataFetch.shared.fetchCard(urlString: urlString) {[weak self] result, error in
+            guard let self = self else { return }
+            
+            if let model = result {
+                print(model)
+//                self.weatherView.updateLabels(model: model)
+
+            }
+        }
     }
 }
 

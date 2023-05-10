@@ -14,8 +14,10 @@ class NetworkRequest {
     
     private init(){}
     
+    
     func requestData(urlString: String, completion: @escaping (Result<Data, Error>)-> Void) {
-        
+//        let urlString = "http://dev.bonusmoney.pro/mobileapp/getAllCompanies"
+
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
